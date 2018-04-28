@@ -1,17 +1,19 @@
+import math
 
-class beta():
+def cost_of_equity(d, Mv):
 	"""
-		It contains all Finance and Investment formulas 
-		you need for investment decision making.
+	It calculates the cost of capital or equity shareholder required
+	rate of return for an investment in which dividend is expected to be paid 
+	
+	d = Constant dividend per share	
+	Mv = ex-dividend share price 
+	"""
+  	try:
+    	ke = d/mv
+    	return ke
+  	except ValueError: 
+    	print(ValueError)
 
-	""" 
-	def __init__(self):
-		pass
 
-	def ke(self):
-		"""
-			It calculates the cost of capital.  
-			
-		"""
-		pass
+
 		
