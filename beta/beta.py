@@ -8,12 +8,10 @@ def cost_of_equity(d, Mv):
 	d = Constant dividend per share	
 	Mv = ex-dividend share price 
 	"""
-  	try:
-    	ke = d/mv
-    	return ke
-  	except ValueError: 
-    	print(ValueError)
-
-
+	try:
+		ke = d/Mv
+		return ke
+	except Exception as e:
+		raise e
 
 		
