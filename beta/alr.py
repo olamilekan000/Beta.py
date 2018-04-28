@@ -1,3 +1,3 @@
 import beta
 
-print(beta.cost_of_equity(0.15, 1.20))
+print(beta.cost_of_equitycumdiv(0.10, 1.15))
