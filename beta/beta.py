@@ -10,7 +10,7 @@ class beta():
 
 	def ke(self):
 		"""
-			It calculates the cost of capital. 
+			It calculates the cost of capital.  
 			
 		"""
 		pass
