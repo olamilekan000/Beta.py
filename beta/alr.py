@@ -1,3 +1,3 @@
 import beta
 
-print(beta.cost_of_equitycumdiv(0.10, 1.15))
+print(beta.div_growth_rate(5, 32, 20))

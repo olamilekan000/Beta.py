@@ -3,11 +3,11 @@ import math
 def cost_of_equitycumdiv(d, Mv):
 	"""
 	Calculates the cost of capital or equity shareholder required rate of 
-	return for an investment in which dividend is expected to be paid forever
+	return for an investment in which dividend is expected to remain constant forever
 	(dividend is about to be paid)
 	Arguments
 	-------------------------------------------------------------------------
-	d = Constant dividend per share	
+	d = dividend per share	
 	Mv = cum-dividend share price 
 	"""
 	Mv = Mv - d
@@ -17,14 +17,15 @@ def cost_of_equitycumdiv(d, Mv):
 	except Exception as e:
 		raise e
 
+
 def cost_of_equity_exdiv(d, Mv):
 	"""
 	Calculates the cost of capital or equity shareholder required rate of 
-	return for an investment in which dividend is expected to be paid forever
+	return for an investment in which dividend is expected to remain constant forever
 	(dividend has just been paid)
 	Arguments
 	-------------------------------------------------------------------------
-	d = Constant dividend per share	
+	d = dividend per share	
 	Mv = ex-dividend share price 
 	"""
 	try:
@@ -33,4 +34,40 @@ def cost_of_equity_exdiv(d, Mv):
 	except Exception as e:
 		raise e
 
-		
+
+def cost_of_equity_growth(div, Mv, g):
+	"""
+	Calculates the cost of capital or equity shareholder required rate of 
+	return for an investment in which dividend is expected to grow  at a constant growth rate
+	(dividend is about to be paid)
+
+	Arguments
+	-------------------------------------------------------------------------
+	d = dividend per share.	
+	Mv = ex-dividend share price. 
+	g = growth rate.
+
+	"""
+	Mv = Mv - div
+	try:
+		ke = (div * (1 + g)/Mv) + g
+		return round(ke, 4)
+	except Exception as e:
+		raise e
+
+
+def div_growth_rate(t, dt, d0):
+	"""
+	Calculates the growth rate of a dividend using the dividend growth rate
+	valuation model.
+	
+	Arguments
+	-------------------------------------------------------------------------
+	t = time
+	dt = current price of dividend
+	d0 = price of dividend t years ago
+
+	"""
+	growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
+	return round(growth_rate, 4)
+	
