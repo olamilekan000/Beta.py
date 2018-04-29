@@ -68,6 +68,49 @@ def div_growth_rate(t, dt, d0):
 	d0 = price of dividend t years ago
 
 	"""
-	growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
-	return round(growth_rate, 4)
+	try:
+		growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
+		return round(growth_rate, 4)
+	except Exception as e:
+		return e
+
+
+def div_growth_rateYr(t, dt, d0):
+	"""
+	Calculates the growth rate of a dividend using the dividend growth rate
+	valuation model where dividend is paid yearly.
 	
+	Arguments
+	-------------------------------------------------------------------------
+	t = time
+	dt = current price of dividend
+	d0 = base year dividend price
+
+	"""	
+	try:
+		t = t - 1
+		growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
+		return round(growth_rate, 4)
+	except Exception as e:
+		raise e
+
+
+def div_growth_rateGm(curr_earn, cap_emp, dt):
+	"""
+	Calculates the growth rate of a dividend using the dividend growth rate
+	valuation model where dividend is paid yearly.
+	
+	Arguments
+	-------------------------------------------------------------------------
+	curr_earn = current earnings 
+	cap_emp = capital employed
+	dt = current dividend
+
+	"""	
+	try:
+		roi = curr_earn/cap_emp
+		b = (curr_earn - dt)/curr_earn 
+		g = (roi * b) * 100
+		return g
+	except Exception as e:
+		raise e
