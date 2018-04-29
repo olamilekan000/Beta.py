@@ -24,8 +24,7 @@ def cost_of_equity_exdiv(d, Mv):
 	return for an investment in which dividend is expected to remain constant forever
 	(dividend has just been paid)
 	Arguments
-	-------------------------------------------------------------------------
-	d = dividend per share	
+	------------------------------------------------------------------------  
 	Mv = ex-dividend share price 
 	"""
 	try:
