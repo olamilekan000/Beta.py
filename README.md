@@ -1,3 +1,3 @@
 # Beta.py
 
-**Beta.py** is a finance library for Financial and Investment Formulas.
+**Beta.py** is a python library for Financial and Investment Formulas.
