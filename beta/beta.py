@@ -11,13 +11,10 @@ def cost_of_equitycumdiv(d, Mv):
 	Mv = cum-dividend share price 
 	"""
 	Mv = Mv - d
-	try:
-		ke = d/Mv
-		return round(ke, 4)
-	except Exception as e:
-		raise e
-
-
+	ke = d/Mv
+	return round(ke, 4)
+	
+	
 def cost_of_equity_exdiv(d, Mv):
 	"""
 	Calculates the cost of capital or equity shareholder required rate of 
@@ -27,11 +24,9 @@ def cost_of_equity_exdiv(d, Mv):
 	------------------------------------------------------------------------  
 	Mv = ex-dividend share price 
 	"""
-	try:
-		ke = d/Mv
-		return ke
-	except Exception as e:
-		raise e
+	ke = d/Mv
+	return ke
+	
 
 
 def cost_of_equity_growth(div, Mv, g):
@@ -48,12 +43,9 @@ def cost_of_equity_growth(div, Mv, g):
 
 	"""
 	Mv = Mv - div
-	try:
-		ke = (div * (1 + g)/Mv) + g
-		return round(ke, 4)
-	except Exception as e:
-		raise e
-
+	ke = (div * (1 + g)/Mv) + g
+	return round(ke, 4)
+	
 
 def div_growth_rate(t, dt, d0):
 	"""
@@ -67,12 +59,9 @@ def div_growth_rate(t, dt, d0):
 	d0 = price of dividend t years ago
 
 	"""
-	try:
-		growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
-		return round(growth_rate, 4)
-	except Exception as e:
-		return e
-
+	growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
+	return round(growth_rate, 4)
+	
 
 def div_growth_rateYr(t, dt, d0):
 	"""
@@ -86,13 +75,10 @@ def div_growth_rateYr(t, dt, d0):
 	d0 = base year dividend price
 
 	"""	
-	try:
-		t = t - 1
-		growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
-		return round(growth_rate, 4)
-	except Exception as e:
-		raise e
-
+	t = t - 1
+	growth_rate = (((dt/d0) ** (1/t)) - 1) * 100
+	return round(growth_rate, 4)
+	
 
 def div_growth_rateGm(curr_earn, cap_emp, dt):
 	"""
@@ -106,10 +92,8 @@ def div_growth_rateGm(curr_earn, cap_emp, dt):
 	dt = current dividend
 
 	"""	
-	try:
-		roi = curr_earn/cap_emp
-		b = (curr_earn - dt)/curr_earn 
-		g = (roi * b) * 100
-		return g
-	except Exception as e:
-		raise e
+	roi = curr_earn/cap_emp
+	b = (curr_earn - dt)/curr_earn 
+	g = (roi * b) * 100
+	return g
+	
