@@ -25,7 +25,7 @@ def cost_of_equity_exdiv(d, Mv):
 	Mv = ex-dividend share price 
 	"""
 	ke = d/Mv
-	return ke
+	return round(ke, 4)
 
 
 def cost_of_equity_growth(div, Mv, g):
@@ -94,7 +94,7 @@ def div_growth_rateGm(curr_earn, cap_emp, dt):
 	roi = curr_earn/cap_emp
 	b = (curr_earn - dt)/curr_earn 
 	g = (roi * b) * 100
-	return g
+	return round(g, 4)
 
 def capm(rf, beta, rm):
     """
@@ -135,4 +135,18 @@ def capm(rf, beta, rm):
         return "values cannot be greater than or equals 1"
     else:
         ke = rf + beta * (rm - rf)
-        return ke	
+        return round(ke, 4)
+
+def pv(rate, n, fv):
+    """
+    Calaculates the present value of a cashflow 
+    
+    parameters:
+    -----------
+    rate: The rate of return of the investment.
+    n: The lifespan of the investment.
+    fv: The future value of the investment.
+
+    Example:
+    --------
+    """	
