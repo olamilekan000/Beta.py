@@ -31,8 +31,8 @@ def cost_of_equity_exdiv(d, Mv):
 def cost_of_equity_growth(div, Mv, g):
 	"""
 	Calculates the cost of capital or equity shareholder required rate of 
-	return for an investment in which dividend is expected to grow  at a constant growth rate
-	(dividend is about to be paid)
+	return for an investment in which dividend is expected to grow  at a 
+	constant growth rate (dividend is about to be paid)
 
 	Arguments
 	-------------------------------------------------------------------------
