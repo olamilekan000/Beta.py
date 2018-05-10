@@ -3,12 +3,14 @@ import math
 def cost_of_equitycumdiv(d, Mv):
 	"""
 	Calculates the cost of capital or equity shareholder required rate of 
-	return for an investment in which dividend is expected to remain constant forever
-	(dividend is about to be paid)
-	Arguments
-	-------------------------------------------------------------------------
+	return for an investment in which dividend is expected to remain constant
+	forever (dividend is about to be paid)
+
+	parameters:
+	-----------
 	d = dividend per share	
 	Mv = cum-dividend share price 
+
 	"""
 	Mv = Mv - d
 	ke = d/Mv
@@ -18,11 +20,13 @@ def cost_of_equitycumdiv(d, Mv):
 def cost_of_equity_exdiv(d, Mv):
 	"""
 	Calculates the cost of capital or equity shareholder required rate of 
-	return for an investment in which dividend is expected to remain constant forever
-	(dividend has just been paid)
-	Arguments
-	------------------------------------------------------------------------  
+	return for an investment in which dividend is expected to remain constant
+	forever (dividend has just been paid)
+
+	parameters:
+	----------- 
 	Mv = ex-dividend share price 
+
 	"""
 	ke = d/Mv
 	return round(ke, 4)
@@ -34,8 +38,8 @@ def cost_of_equity_growth(div, Mv, g):
 	return for an investment in which dividend is expected to grow  at a 
 	constant growth rate (dividend is about to be paid)
 
-	Arguments
-	-------------------------------------------------------------------------
+	parameters:
+	-----------
 	d = dividend per share.	
 	Mv = ex-dividend share price. 
 	g = growth rate.
@@ -51,8 +55,8 @@ def div_growth_rate(t, dt, d0):
 	Calculates the growth rate of a dividend using the dividend growth rate
 	valuation model.
 	
-	Arguments
-	-------------------------------------------------------------------------
+	parameters:
+	-----------
 	t = time
 	dt = current price of dividend
 	d0 = price of dividend t years ago
@@ -67,8 +71,8 @@ def div_growth_rateYr(t, dt, d0):
 	Calculates the growth rate of a dividend using the dividend growth rate
 	valuation model where dividend is paid yearly.
 	
-	Arguments
-	-------------------------------------------------------------------------
+	parameters:
+	-----------
 	t = time
 	dt = current price of dividend
 	d0 = base year dividend price
@@ -84,8 +88,8 @@ def div_growth_rateGm(curr_earn, cap_emp, dt):
 	Calculates the growth rate of a dividend using the dividend growth rate
 	valuation model where dividend is paid yearly.
 	
-	Arguments
-	-------------------------------------------------------------------------
+	parameters:
+	-----------
 	curr_earn = current earnings 
 	cap_emp = capital employed
 	dt = current dividend
@@ -127,7 +131,9 @@ def capm(rf, beta, rm):
         --------
         rf = 0.07, beta = 12, rm = 0.10
         
-        min.required rate of return = 0.07 + 1.2(0.10 - 0.07) = .106 i.e. 10.6%
+        inserting the values into the formula:
+        --------------------------------------
+        beta.capm(0.07, 1.2, 0.10), 0.106) = .106 i.e. 10.6%
 
     """
     
@@ -139,7 +145,7 @@ def capm(rf, beta, rm):
 
 def pv(rate, n, fv):
     """
-    Calaculates the present value of a cashflow 
+    Calaculates the present value of a cashflow. 
     
     parameters:
     -----------
@@ -149,4 +155,17 @@ def pv(rate, n, fv):
 
     Example:
     --------
-    """	
+    what is the present value of $300,000 receivable in 4 years time if the
+    interest rate is 8%
+
+        solution
+        --------
+        rate = 8%, n = 4 years, fv = $300,000
+
+        inserting the values into the formula:
+        --------------------------------------        
+        beta.pv(0.08, 4, 300000) = $220,509
+
+    """
+    present_value = fv/(1+rate)**n	
+    return round(present_value)
