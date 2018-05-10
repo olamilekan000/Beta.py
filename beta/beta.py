@@ -167,5 +167,20 @@ def pv(rate, n, fv):
         beta.pv(0.08, 4, 300000) = $220,509
 
     """
-    present_value = fv/(1+rate)**n	
-    return round(present_value)
+    PV = fv/(1+rate)**n	
+    return round(PV)
+
+def roi(cost, dis):
+	"""calculates the gain from an investment
+
+	parameters:
+	-----------
+	cost: cost of the investment
+	dis: disposal value of the investment
+
+    
+
+	"""
+	gain = dis - cost
+	ROI  = (gain/cost)
+	return round(ROI, 4)
